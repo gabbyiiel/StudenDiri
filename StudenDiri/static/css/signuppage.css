@@ -1,0 +1,262 @@
+/* Fonts */
+/* CMG Sans Bold */
+@font-face {
+    font-family: 'CMG Sans';
+    src: url('CMGSans-Bold.woff2') format('woff2'),
+        url('CMGSans-Bold.woff') format('woff'),
+        url('CMGSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+/* CMG Sans BoldItalic */
+@font-face {
+    font-family: 'CMG Sans';
+    src: url('CMGSans-BoldItalic.woff2') format('woff2'),
+        url('CMGSans-BoldItalic.woff') format('woff'),
+        url('CMGSans-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+/* CMG Sans Italic */
+@font-face {
+    font-family: 'CMG Sans';
+    src: url('CMGSans-Italic.woff2') format('woff2'),
+        url('CMGSans-Italic.woff') format('woff'),
+        url('CMGSans-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;700&display=swap');
+
+/* Fonts */
+
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    color: white;
+
+}
+body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    background-image: url("../img/loginpagebg-min.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #351117;   
+}
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+ .signup-grid {
+    background:#24070B;
+    display: grid;
+    grid-template-columns: repeat(19, 1fr);
+    grid-template-rows: repeat(28, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 637px;
+    height: 738px;
+    border: 5px;
+    border-radius: 20px
+    }
+ .logocontainer {
+    background: transparent;
+    }
+.whitelogo {
+    justify-content: center;
+    width: auto;
+    height: 75px;
+    background: transparent;
+}
+
+.div1 { 
+    grid-area: 2 / 2 / 3 / 3;
+    color: white;
+    background: transparent;
+ }
+ .div1 a {
+    background: transparent;
+ }
+ .div1 img{
+    background: transparent;
+ }
+.div2 { 
+    grid-area: 3 / 4 / 4 / 15; 
+    color: white;
+    background: transparent;
+}
+.div2 p {
+    background: transparent;
+    font-weight: 600;
+    font-size: 29px;
+    line-height: 35px;
+}
+
+.div3 { 
+    grid-area: 5 / 4 / 6 / 10;
+    background: transparent;
+}
+.div3 input {
+    padding-left: 10px;
+    width: 208px;
+    height: 46px;
+    background: transparent;
+}
+.div4 { 
+    grid-area: 5 / 11 / 6 / 17; 
+    background: transparent;
+}
+
+.div4 input {
+    padding-left: 10px;
+    width: 208px;
+    height: 46px;
+    background: transparent;
+}
+.div5 { 
+    grid-area: 7 / 4 / 9 / 17; 
+    background: transparent;
+}
+.div5 input {
+    padding-left: 10px;
+    width: 443px;
+    height: 46px;
+    background: transparent;
+}
+.div6 { 
+    grid-area: 10 / 8 / 12 / 17; 
+    background: transparent;
+}
+.div6 input {
+    padding-left: 10px;
+    width: 308px;
+    height: 46px;
+    background: transparent;
+}
+.div7 { 
+    grid-area: 11 / 4 / 14 / 7; 
+    background: transparent;
+}
+.div7 input {
+    font-size: 14px;
+    padding-left: 10px;
+    width: 120px;
+    height: 46px;
+    background: transparent;
+}
+.div8 { 
+    grid-area: 13 / 8 / 15 / 17; 
+    background: transparent;
+}
+.div8 input {
+    padding-left: 10px;
+    width: 308px;
+    height: 46px;
+    background: transparent;
+}
+.div9 { 
+    grid-area: 16 / 4 / 18 / 17; 
+    background: transparent;
+}
+.div9 input {
+    padding-left: 10px;
+    width: 443px;
+    height: 46px;
+    background: transparent;
+}
+.div10 { 
+    grid-area: 19 / 6 / 21 / 10;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div10 span {
+    padding-right: 50px;
+    font-size: 16px;
+    background: transparent;
+    color: white;
+}
+.div11 { 
+    grid-area: 19 / 11 / 21 / 15;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div11 span {
+    padding-right: 29px;
+    font-size: 16px;
+    background: transparent;
+    color: white;
+}
+.div12 { 
+    grid-area: 24 / 4 / 25 / 17;
+    background: transparent;
+ }
+ .div12 p {
+    font-size: 12px;
+ }
+.div13 { 
+    grid-area: 26 / 7 / 28 / 14;
+    background: transparent;    
+}
+.signup_form_input {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    font-size: 16px;
+    letter-spacing: 0.15px;  
+}
+.signup_form_button {
+    font-weight: 700;
+    color: #711A28;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    background: transparent;
+    background-color: #FFC163;
+    width: 235px;
+    height: 47px;
+    font-size: 18px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.15px;
+}
+.agreement_text {
+    color: white;
+    padding-top: 20px;
+    background: transparent;
+}
+.boldtext {
+    background: transparent;
+    font-weight: bold;
+    color: #FFC163;
+}
+
+.signup_text a {
+    color: #FFC163;
+    font-weight: 500;
+}

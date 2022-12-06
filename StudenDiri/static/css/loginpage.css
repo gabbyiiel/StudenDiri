@@ -1,0 +1,123 @@
+/* Fonts */
+/* CMG Sans Bold */
+@font-face {
+    font-family: 'CMG Sans';
+    src: url('CMGSans-Bold.woff2') format('woff2'),
+        url('CMGSans-Bold.woff') format('woff'),
+        url('CMGSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+/* CMG Sans BoldItalic */
+@font-face {
+    font-family: 'CMG Sans';
+    src: url('CMGSans-BoldItalic.woff2') format('woff2'),
+        url('CMGSans-BoldItalic.woff') format('woff'),
+        url('CMGSans-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+/* CMG Sans Italic */
+@font-face {
+    font-family: 'CMG Sans';
+    src: url('CMGSans-Italic.woff2') format('woff2'),
+        url('CMGSans-Italic.woff') format('woff'),
+        url('CMGSans-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;700&display=swap');
+/* Fonts */
+
+
+
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: white;
+}
+body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-image: url("../img/loginpagebg-min.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #351117;
+    
+}
+.whitelogo {
+    margin-bottom: 50px;
+    width: auto;
+    height: 150px;
+    background: transparent;
+    
+}
+
+
+.login_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.login_form_input {
+    border: 2px solid #FFDFAD;
+    border-radius: 26px;
+    background: rgba(217, 217, 217, 0.2);
+    width: 352px;
+    height: 43px;
+    left: 544px;
+    top: 484px;
+    margin: 4px 0;
+    padding-left: 25px;
+    font-size: 16px;
+    letter-spacing: 0.15px;
+}
+
+.login_form_button {
+    font-weight: 700;
+    color: #711A28;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    background: transparent;
+    background-color: #FFC163;
+    width: 352px;
+    height: 43px;
+    left: 544px;
+    top: 583px;
+    margin: 4px 0;
+    
+    font-size: 18px;
+    letter-spacing: 0.15px;
+}
+.signup_text {
+    color: white;
+    margin-top: 20px;
+    background: transparent;
+    font-size: 20px;
+}
+.signup_text a {
+    color: #FFC163;
+    font-weight: 500;
+    background: transparent;
+}
+
+
