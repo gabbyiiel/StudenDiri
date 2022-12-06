@@ -9,3 +9,9 @@ def login():
 @views.route('/signup')
 def sign_up():
     return render_template("signuppage.html")
+
+@app.route('/')
+@app.route('/index')
+def index():
+    
+    return 'Hello world'
