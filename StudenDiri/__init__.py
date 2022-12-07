@@ -4,7 +4,6 @@ from flask_mysql_connector import MySQL
 
 
 # import blueprints
-from .views import views
 from .auth import auth
 
 mysql = MySQL()
@@ -23,7 +22,6 @@ def create_app(test_app=None):
     )
     
     # register blueprints
-    app.register_blueprint(views)
     app.register_blueprint(auth)
     
     return app

@@ -24,3 +24,17 @@ class UserRepo:
             
         # if user:
         #     password = 
+        
+    @staticmethod
+    def signup(username,idnumber, firstname, lastname, email, course, college, password, gender,):
+        cur = mysql.connection.cursor()
+        
+        try:
+            cur.execute(f""" INSERT INTO users
+                        (`username`, `idnumber`, `firstname`, `lastname`, `email`, `college`, `course`, `password`, 'gender') 
+                        VALUES ( '{username}','{idnumber}','{firstname}','{lastname}','{email}','{college}','{course}','{password}','{gender}')
+                        """)
+            mysql.connection.commit()
+            return print('Hatdog')
+        except Exception as e:
+            print(e)    

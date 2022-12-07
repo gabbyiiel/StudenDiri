@@ -1,10 +1,10 @@
 from flask import Blueprint, render_template, request, flash
+from . import auth
+#from StudenDiri.models.UserRepo import UserRepo
 
-auth = Blueprint('auth', __name__)
-
-# @auth.route('/')
-# def index():
-#     return render_template 
+@auth.route('/')
+def index():
+    return render_template("auth/signup-page.html")
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
@@ -27,15 +27,16 @@ def sign_up():
         idnumber = request.form.get('idnumber')
         course = request.form.get('course')
         password = request.form.get('password')
-        email = request.form.get('email')
         gender = request.form.get('gender')
+        username = request.form.get('username')
         
         #function for verification
         if len(password) < 8:
             flash('Password is too short', category='error') 
             
-        else:
-            flash('Account Created', category='success')
-            pass
+        # else:
+        #     signup = UserRepo.signup(username,idnumber, firstname, lastname, email, course, college, password, gender,)
+        #     flash('Account Created', category='success')
+        #     pass
 
-    return render_template("signuppage.html")
+    return render_template("auth/signuppage.html")
