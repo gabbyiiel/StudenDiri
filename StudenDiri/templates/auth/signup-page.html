@@ -19,43 +19,148 @@
   </head>
 
   <body>
-    <div class="signup_form">
-      <form method="POST">
-        <div class="div1" id="closebutton">
-          <a href="login"
-            ><img class="close-icon" src={{url_for('static',
-            filename='img/close-icon.png') }}></a
-          >
-        </div>
-        <div class="div2">
+    <div class="container-md">
+      <form method="POST" class="signup_form row g-4">
+        <div class="row justify-content-start" id="CreateText">
+          <button
+            type="button"
+            class="btn-close btn-close-white row"
+            aria-label="Close"
+            href="/login"
+          ></button>
           <p>Create your account</p>
         </div>
-        <div class="div3">
-          <input
-            class="signup_form_input"
-            name="firstname"
-            type="firstname"
-            placeholder="First name"
-          />
+        <div class="row g-2">
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              id="inputFirstname"
+              placeholder="First name"
+            />
+          </div>
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              id="inputLastname"
+              placeholder="Last name"
+            />
+          </div>
+          <div class="col">
+            <input
+              type="email"
+              class="form-control"
+              id="inputEmail"
+              placeholder="Email"
+            />
+          </div>
         </div>
-        <div class="div4">
-          <input
-            class="signup_form_input"
-            name="lastname"
-            type="lastname"
-            placeholder="Last name"
-          />
+        <div class="row g-2">
+          <div class="col-4">
+            <input
+              type="text"
+              class="form-control"
+              id="inputIdnumber"
+              placeholder="ID Number"
+            />
+          </div>
+          <div class="col">
+            <select
+              name="college"
+              class="form-control"
+              id="college-select"
+              placeholder="College"
+            >
+              <option value="CCS">CCS</option>
+              <option value="CEBA">CEBA</option>
+              <option value="CASS">CASS</option>
+              <option value="CSM">CSM</option>
+              <option value="CON">CON</option>
+              <option value="CED">CED</option>
+            </select>
+          </div>
+          <div class="col">
+            <select
+              name="course"
+              class="form-control"
+              id="course-select"
+              placeholder="Course"
+            >
+              <option value="CS">CS</option>
+              <option value="IT">IT</option>
+              <option value="CA">CA</option>
+              <option value="IS">IS</option>
+              <option value="CON">CON</option>
+              <option value="CED">CED</option>
+            </select>
+          </div>
         </div>
-        <div class="div5"></div>
-        <div class="div6"></div>
-        <div class="div7"></div>
-        <div class="div8"></div>
-        <div class="div9"></div>
-        <div class="div10"></div>
-        <div class="div11"></div>
-        <div class="div12"></div>
-        <div class="div13"></div>
-        <div class="div14"></div>
+        <div class="row g-2">
+          
+        </div>
+        <div class="row g-2">
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              id="inputUsername"
+              placeholder="Username"
+            />
+          </div>
+        </div>
+        <div class="row g-2">
+          <div class="col">
+            <input
+              type="password"
+              class="form-control"
+              id="inputPassword"
+              placeholder="Password"
+            />
+          </div>
+        </div>
+        <div class="row g-2">
+          <div class="col" id="GenderM">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="Gender"
+                value="Male"
+              />
+              <label class="form-check-label" for="Gender">Male</label>
+            </div>
+          </div>
+            <div class="col" id="GenderF">
+              <div class="form-check form-check-inline justify-content-center">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="Gender"
+                  value="Female"
+                />
+                <label class="form-check-label" for="Gender">Female</label>
+              </div>
+            </div>
+          </div>
+          <div class="row g-2">
+          <div class="SignupText">
+            <p class="agreement_text">
+              By clicking Sign Up, you agree to our
+              <span class="boldtext">Terms</span>,<span class="boldtext"
+                >Privacy Policy</span
+              >
+              and <span class="boldtext">Policy</span>.
+            </p>
+          </div>
+          <div class="btn">
+            <button class="btn btn-primary" type="submit">Signup</button>
+          </div>
+          
+        </div>
+        </div>
       </form>
     </div>
 

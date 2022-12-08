@@ -1,8 +1,6 @@
 ### THIS IS WHERE YOU MANIPULATE USER DATA IN THE DATABASE ###
 
 
-from StudenDiri import mysql
-
 class UserRepo:
     @staticmethod
     def login(username, password):
