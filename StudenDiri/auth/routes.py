@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash
 from . import auth
-from StudenDiri.models.UserRepo import UserRepo
+from .models import UserRepo
 
 @auth.route('/')
 def index():
@@ -17,7 +17,7 @@ def logout():
     return "<p> logout</p>"
 
 
-@auth.route('/signup', methods=['GET', 'POST'])
+@auth.route('/signup1', methods=['GET', 'POST'])
 def sign_up():
     if request.method == 'POST':
         firstname = request.form.get('inputFirstname')
@@ -29,7 +29,7 @@ def sign_up():
         password = request.form.get('inputPassword')
         gender = request.form.get('Gender')
         username = request.form.get('inputUsername')
-        
+        print(firstname,lastname,gender)
         #function for verification
         if len(password) < 8:
             flash('Password is too short', category='error') 

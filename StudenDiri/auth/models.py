@@ -1,5 +1,5 @@
 ### THIS IS WHERE YOU MANIPULATE USER DATA IN THE DATABASE ###
-
+from StudenDiri import mysql
 
 class UserRepo:
     @staticmethod
@@ -29,8 +29,8 @@ class UserRepo:
         
         try:
             cur.execute(f""" INSERT INTO users
-                        (`username`, `idnumber`, `firstname`, `lastname`, `email`, `college`, `course`, `password`, 'gender') 
-                        VALUES ( '{username}','{idnumber}','{firstname}','{lastname}','{email}','{college}','{course}','{password}','{gender}')
+                        (`userID`,`username`, `idnumber`, `firstname`, `lastname`, `email`, `college`, `course`, `password`, 'gender') 
+                        VALUES (5,'{username}','{idnumber}','{firstname}','{lastname}','{email}','{college}','{course}','{password}','{gender}')
                         """)
             mysql.connection.commit()
             return print('Hatdog')

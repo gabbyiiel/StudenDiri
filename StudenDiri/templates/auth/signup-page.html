@@ -19,6 +19,23 @@
   </head>
 
   <body>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %} {% if category ==
+    'error' %}
+    <div class="alert alert-danger alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% else %}
+    <div class="alert alert-success alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
     <div class="container-md">
       <form method="POST" class="signup_form row g-4">
         <div class="row justify-content-start" id="CreateText">
@@ -26,13 +43,14 @@
             type="button"
             class="btn-close btn-close-white row"
             aria-label="Close"
-            href="/login"
+            href="login"
           ></button>
           <p>Create your account</p>
         </div>
         <div class="row g-2">
           <div class="col-md-6">
             <input
+              name="inputFirstname"
               type="text"
               class="form-control"
               id="inputFirstname"
@@ -41,6 +59,7 @@
           </div>
           <div class="col-md-6">
             <input
+              name="inputLastname"
               type="text"
               class="form-control"
               id="inputLastname"
@@ -49,6 +68,7 @@
           </div>
           <div class="col">
             <input
+              name="inputEmail"
               type="email"
               class="form-control"
               id="inputEmail"
@@ -59,6 +79,7 @@
         <div class="row g-2">
           <div class="col-4">
             <input
+              name="inputIdnumber"
               type="text"
               class="form-control"
               id="inputIdnumber"
@@ -67,7 +88,7 @@
           </div>
           <div class="col">
             <select
-              name="college"
+              name="college-select"
               class="form-control"
               id="college-select"
               placeholder="College"
@@ -82,7 +103,7 @@
           </div>
           <div class="col">
             <select
-              name="course"
+              name="course-select"
               class="form-control"
               id="course-select"
               placeholder="Course"
@@ -96,12 +117,11 @@
             </select>
           </div>
         </div>
-        <div class="row g-2">
-          
-        </div>
+        <div class="row g-2"></div>
         <div class="row g-2">
           <div class="col">
             <input
+              name="inputUsername"
               type="text"
               class="form-control"
               id="inputUsername"
@@ -112,6 +132,7 @@
         <div class="row g-2">
           <div class="col">
             <input
+              name="inputPassword"
               type="password"
               class="form-control"
               id="inputPassword"
@@ -125,27 +146,27 @@
               <input
                 class="form-check-input"
                 type="radio"
-                name="inlineRadioOptions"
+                name="Gender"
                 id="Gender"
                 value="Male"
               />
               <label class="form-check-label" for="Gender">Male</label>
             </div>
           </div>
-            <div class="col" id="GenderF">
-              <div class="form-check form-check-inline justify-content-center">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="Gender"
-                  value="Female"
-                />
-                <label class="form-check-label" for="Gender">Female</label>
-              </div>
+          <div class="col" id="GenderF">
+            <div class="form-check form-check-inline justify-content-center">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="Gender"
+                id="Gender"
+                value="Female"
+              />
+              <label class="form-check-label" for="Gender">Female</label>
             </div>
           </div>
-          <div class="row g-2">
+        </div>
+        <div class="row g-2">
           <div class="SignupText">
             <p class="agreement_text">
               By clicking Sign Up, you agree to our
@@ -156,10 +177,15 @@
             </p>
           </div>
           <div class="btn">
-            <button class="btn btn-primary" type="submit">Signup</button>
+            <button
+              class="btn btn-primary"
+              name="add"
+              type="submit"
+              value="submit"
+            >
+              Signup
+            </button>
           </div>
-          
-        </div>
         </div>
       </form>
     </div>
