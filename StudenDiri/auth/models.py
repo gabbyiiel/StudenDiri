@@ -19,7 +19,7 @@ class UserRepo:
                 'code' : -1,
                 'message' : f'{e}'
             }
-            
+                    
         # if user:
         #     password = 
         
@@ -28,10 +28,9 @@ class UserRepo:
         cur = mysql.connection.cursor()
         
         try:
-            cur.execute(f""" INSERT INTO users
-                        (`userID`,`username`, `idnumber`, `firstname`, `lastname`, `email`, `college`, `course`, `password`, 'gender') 
-                        VALUES (5,'{username}','{idnumber}','{firstname}','{lastname}','{email}','{college}','{course}','{password}','{gender}')
-                        """)
+            cur.execute(f''' INSERT INTO `users`(`userID`, `username`, `idnumber`, `firstname`, `lastname`, `email`, `college`, `course`, `password`, `gender`) VALUES
+                        ('','{username}','{idnumber}','{firstname}','{lastname}','{email}','{college}','{course}','{password}','{gender}')
+                        ''')
             mysql.connection.commit()
             return print('Hatdog')
         except Exception as e:
