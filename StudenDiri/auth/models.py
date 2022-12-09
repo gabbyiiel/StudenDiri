@@ -7,10 +7,10 @@ class UserRepo:
         cur = mysql.connection.cursor()
         
         try:
-            cur.execute(f"""
+            cur.execute(f'''
                         SELECT * FROM users
-                        WHERE username = '{username}'
-                        """)
+                        WHERE `username` = '{username} AND `password` = '{password}'
+                        ''')
             user = cur.fetchone()
             print(user)
         
@@ -19,10 +19,6 @@ class UserRepo:
                 'code' : -1,
                 'message' : f'{e}'
             }
-                    
-        # if user:
-        #     password = 
-        
     @staticmethod
     def signup(username,idnumber, firstname, lastname, email, course, college, password, gender,):
         cur = mysql.connection.cursor()
