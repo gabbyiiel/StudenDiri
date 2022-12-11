@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, flash, redirect, session
 from flask_login import login_user, login_required, logout_user, current_user
 from StudenDiri import mysql
+
 from . import auth
 from .models import UserRepo
 
@@ -31,7 +32,7 @@ def logout():
     return redirect('login')
 
 
-@auth.route('/signup1', methods=['GET', 'POST'])
+@auth.route('/signup', methods=['GET', 'POST'])
 def sign_up():
     if request.method == 'POST':
         firstname = request.form.get('inputFirstname')
@@ -46,7 +47,8 @@ def sign_up():
         print(firstname,lastname,gender)
         #function for verification
         if len(password) < 8:
-            flash('Password is too short', category='error') 
+            flash('Password must be at least 8 characters', category='error')
+            return
             
         else:
             signup = UserRepo.signup(username,idnumber, firstname, lastname, email, course, college, password, gender,)
