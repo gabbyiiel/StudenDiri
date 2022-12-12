@@ -7,7 +7,7 @@ from .models import UserRepo
 
 @auth.route('/')
 def index():
-    return "<p>hello</p>"
+    return render_template("landingpage/navbar.html")
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
@@ -56,3 +56,5 @@ def sign_up():
             return redirect('login')
 
     return render_template("auth/signup-page.html")
+
+
