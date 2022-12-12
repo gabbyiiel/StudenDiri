@@ -1,6 +1,4 @@
 ### THIS IS WHERE YOU MANIPULATE USER DATA IN THE DATABASE ###
-
-
 from StudenDiri import mysql
 
 class UserRepo:
@@ -9,10 +7,10 @@ class UserRepo:
         cur = mysql.connection.cursor()
         
         try:
-            cur.execute(f"""
+            cur.execute(f'''
                         SELECT * FROM users
-                        WHERE username = '{username}'
-                        """)
+                        WHERE `username` = '{username} AND `password` = '{password}'
+                        ''')
             user = cur.fetchone()
             print(user)
         
@@ -21,19 +19,14 @@ class UserRepo:
                 'code' : -1,
                 'message' : f'{e}'
             }
-            
-        # if user:
-        #     password = 
-        
     @staticmethod
     def signup(username,idnumber, firstname, lastname, email, course, college, password, gender,):
         cur = mysql.connection.cursor()
         
         try:
-            cur.execute(f""" INSERT INTO users
-                        (`username`, `idnumber`, `firstname`, `lastname`, `email`, `college`, `course`, `password`, 'gender') 
-                        VALUES ( '{username}','{idnumber}','{firstname}','{lastname}','{email}','{college}','{course}','{password}','{gender}')
-                        """)
+            cur.execute(f''' INSERT INTO `users`(`userID`, `username`, `idnumber`, `firstname`, `lastname`, `email`, `college`, `course`, `password`, `gender`) VALUES
+                        ('','{username}','{idnumber}','{firstname}','{lastname}','{email}','{college}','{course}','{password}','{gender}')
+                        ''')
             mysql.connection.commit()
             return print('Hatdog')
         except Exception as e:
