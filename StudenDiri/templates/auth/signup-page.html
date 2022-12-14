@@ -19,23 +19,27 @@
   </head>
 
   <body>
-    {% with messages = get_flashed_messages(with_categories=true) %} {% if
-    messages %} {% for category, message in messages %} {% if category ==
-    'error' %}
-    <div class="alert alert-danger alter-dismissable fade show" role="alert">
-      {{ message }}
-      <button type="button" class="close" data-dismiss="alert">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    {% else %}
-    <div class="alert alert-success alter-dismissable fade show" role="alert">
-      {{ message }}
-      <button type="button" class="close" data-dismiss="alert">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    {% endif %} {% endfor %} {% endif %} {% endwith %}
+    {% with messages = get_flashed_messages(with_categories=true) %} 
+      {% if messages %} 
+        {% for category, message in messages %} 
+          {% if category =='error' %}
+            <div class="alert alert-danger alter-dismissable fade show" role="alert">
+              {{ message }}
+              <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          {% else %}
+            <div class="alert alert-success alter-dismissable fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+          {% endif %} 
+        {% endfor %} 
+      {% endif %} 
+    {% endwith %}
 
     <div class="container">
       <div class="card">
@@ -105,35 +109,60 @@
                 </div>
                 <div class="col-12 col-md-4 mb-2">
                   <select
-                    name="college-select"
+                    name="college_select"
                     class="form-control"
-                    id="college-select"
-                    placeholder="College"
+                    id="college_select"
+                    title="Select College"
                   >
                     <option selected disabled value="">College</option>
-                    <option value="CCS">CCS</option>
-                    <option value="CEBA">CEBA</option>
-                    <option value="CASS">CASS</option>
-                    <option value="CSM">CSM</option>
-                    <option value="CON">CON</option>
-                    <option value="CED">CED</option>
-                    <option value="COET">COET</option>
+                    <option value="1">CCS</option>
+                    <option value="2">CSM</option>
+                    <option value="3">CEBA</option>
+                    <option value="4">CASS</option>
+                    <option value="5">CON</option>
+                    <option value="6">CED</option>
+                    <option value="7">COET</option>
                   </select>
                 </div>
                 <div class="col-12 col-md-4 mb-2">
                   <select
-                    name="course-select"
+                    name="course_select"
                     class="form-control"
-                    id="course-select"
+                    id="course_select"
                     placeholder="Course"
                   >
-                    <option selected disabled value="">College</option>
-                    <option value="CS">CS</option>
-                    <option value="IT">IT</option>
-                    <option value="CA">CA</option>
-                    <option value="IS">IS</option>
-                    <option value="CON">CON</option>
-                    <option value="CED">CED</option>
+                    <option selected disabled value="">Course</option>
+                    <!-- CCS -->
+                    <option value="1">BS-IT</option>
+                    <option value="1">BS-IS</option>
+                    <option value="1">BS-CA</option>
+                    <option value="1">BS-CS</option>
+                    <!-- CSM -->
+                    <option value="2">BS-BIO(BOTANY)</option>
+                    <option value="2">BS-BIO(ZOO)</option>
+                    <option value="2">BS-BIO(MARINE)</option>
+                    <option value="2">BS-BIO(GENERAL)</option>
+                    <option value="2">BS-CHEM</option>
+                    <option value="2">BS-MATH</option>
+                    <option value="2">BS-STAT</option>
+                    <option value="2">BS-PHYSICS</option>
+                    <!-- CEBA -->
+                    <option value="3">BS-BUSECON</option>
+                    <option value="3">BS-ECON</option>
+                    <option value="3">BS_ENTREP</option>
+                    <option value="3">BS-HRM</option>
+                    <option value="3">BS-A</option>
+                    <!-- CASS -->
+                    <option value="4">BA-ELS</option>
+                    <option value="4">BA-FIL</option>
+                    <option value="4">BA-HISTO</option>
+                    <option value="4">BA-POLSCI</option>
+                    <option value="4">BA-PSYCH</option>
+                    <option value="4">BS-PSYCH</option>
+                    <option value="4">BS-Socio</option>
+                    <option value="4">BS-Socio</option>
+
+
                   </select>
                 </div>
               </div>
@@ -218,12 +247,27 @@
         </div>
       </div>
     </div>
-
+        <!-- Jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.2.min.js"
+      integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA="
+      crossorigin="anonymous"
+    ></script>
     <!--Bootstrap script-->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <!-- script for college to course selection -->
+<script>
+  var $college_select = $( '#college_select' ),
+		$course_select = $( '#course_select' ),
+    $options = $course_select.find( 'option' );
+    
+    $college_select.on( 'change', function() {
+    $course_select.html( $options.filter( '[value="' + this.value + '"]' ) );
+} ).trigger( 'change' );
+</script>
   </body>
 </html>

@@ -1,4 +1,12 @@
-{% extends 'template.html' %} {% block content %}
+{% extends 'template.html' %} {% block content %} {% if session['loggedin'] %}
+<!-- SESSION LOGGED IN -->
+<div class="main">
+  <div class="container">
+    <p>INSERT SOMESHIT PARA MAKA KUAN SA DASHBOARD FAK</p>
+  </div>
+</div>
+{% else %}
+<!-- SESSION LOGOUT -->
 <div class="main">
   <div class="container">
     <div
@@ -40,4 +48,4 @@
     </div>
   </div>
 </div>
-{% endblock content %}
+{% end if %} {% endblock content %}
