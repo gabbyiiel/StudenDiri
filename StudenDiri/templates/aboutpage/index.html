@@ -1,35 +1,82 @@
 {% extends 'template.html' %} {% block content %}
-<div class="container">
-  <div class="row">
-    <div class="page-header w-100 py-4">
-      <div class="row">
-        <div class="col-md-8" style="margin-right: 20px">
-          <h2 style="margin-top: 0">Students List</h2>
-        </div>
-
-        <!-- Filter table field -->
-        <div class="col-md-2" style="margin-right: -20px">
-          <input
-            type="text"
-            id="filter"
-            class="form-control"
-            placeholder="Filter..."
-          />
-        </div>
-
-        <!-- Add student button -->
-        <div class="col-md-2">
-          <button
-            type="button"
-            class="btn btn-primary btn-block pull-right"
-            data-toggle="modal"
-            data-target="#newStudentModal"
-          >
-            Add Student
-          </button>
-        </div>
+<div class="container text-center">
+  <div class="row justify-content-center">
+    <div class="text-light g-5 mb-5">
+      <h1>Meet the Team!</h1>
+    </div>
+    <div class="divider mb-5"><p>OUR STORY</p></div>
+  </div>
+  <div class="row text-light mb-5">
+    <p class="col-8">
+      We are a group of students from MSU-IIT fascinated about the idea of
+      creating solutions to campus problems such as lack of campus food
+      delivery, printing station, etc. We are a team of problem solvers,
+      developers, intellectuals who work around the clock to make studenDiri the
+      most covenient and needed service platform of every students.
+    </p>
+  </div>
+  <div class="divider"><p>OUR TEAM</p></div>
+</div>
+<div class="swiper mySwiper container1 mt-5">
+  <div class="swiper-wrapper content">
+    <div class="swiper-slide card card0 ms-4">
+      <img class="card_img" src={{url_for ('static',
+      filename='img/portraits/Dimpol.jpeg')}}>
+      <div class="card_overlay">
+        <div class="card_title">Back-end Developer</div>
+        <p class="card_description">Dimple Bacus</p>
       </div>
     </div>
+    <div class="swiper-slide card card1">
+      <img class="card_img" src={{url_for ('static',
+      filename='img/portraits/Andrie.jpg')}}>
+    </div>
+    <div class="swiper-slide card card2">
+      <img class="card_img" src={{url_for ('static',
+      filename='img/portraits/gab.jpg')}}>
+    </div>
+    <div class="swiper-slide card card3">
+      <img class="card_img" src={{url_for ('static',
+      filename='img/portraits/Kylep.jpg')}}>
+    </div>
+    <div class="swiper-slide card card4">
+      <img class="card_img" src={{url_for ('static',
+      filename='img/portraits/michael.jpg')}}>
+    </div>
+    <div class="swiper-slide card card5">
+      <img class="card_img" src={{url_for ('static',
+      filename='img/portraits/bj.jpg')}}>
+    </div>
+    <div class="swiper-slide card card6">
+      <img class="card_img" src={{url_for ('static',
+      filename='img/portraits/redge.jpg')}}>
+    </div>
+    <div class="swiper-slide card card7">
+      <img class="card_img" src={{url_for ('static',
+      filename='img/portraits/baculio.jpg')}}>
+    </div>
+    <div class="swiper-slide card card8">
+      <img class="card_img" src={{url_for ('static',
+      filename='img/portraits/atos.jpg')}}>
+    </div>
+    <div class="swiper-slide card card9">
+      <img class="card_img" src={{url_for ('static',
+      filename='img/portraits/Gearyne.jpg')}}>
+    </div>
+    <div class="swiper-slide card card10">
+      <img class="card_img" src={{url_for ('static',
+      filename='img/portraits/mikay.jpg')}}>
+    </div>
+    <div class="swiper-slide card card11">
+      <img class="card_img" src={{url_for ('static',
+      filename='img/portraits/princess.jpg')}}>
+    </div>
+    <div class="swiper-slide card card12">
+      <img class="card_img" src={{url_for ('static',
+      filename='img/portraits/gab.jpg')}}>
+    </div>
   </div>
+  <div class="swiper-pagination"></div>
 </div>
+
 {% endblock content %}

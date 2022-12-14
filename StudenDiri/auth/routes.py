@@ -6,8 +6,16 @@ from . import auth
 from .models import UserRepo
 
 @auth.route('/')
-def index():
+def lp_index():
     return render_template("landingpage/index.html")
+
+@auth.route('/about')
+def ap_index():
+    return render_template("aboutpage/index.html")
+
+@auth.route('/services')
+def sp_index():
+    return render_template("servicespage/index.html")
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
@@ -49,7 +57,6 @@ def sign_up():
         if len(password) < 8:
             flash('Password must be at least 8 characters', category='error')
             return
-            
         else:
             signup = UserRepo.signup(username,idnumber, firstname, lastname, email, course, college, password, gender,)
             flash('Account Created', category='success')
