@@ -1,52 +1,8 @@
 {% extends 'template.html' %} {% block content %}
-  <div class="date">
-    <span class="dayname">Day,</span>
-    <span class="month">Month</span>
-    <span class="daynum">00</span>
-  </div>
-  <div class="greetings">
-    <h1 class="welcome">Welcome</h1>
-  </div>
-
-  <div class="container"></div>
-  <script type="text/javascript">
-    function Date() {
-      var now = new Date();
-      var dname = now.getDay();
-      mo = now.getMonth();
-      dnum = now.getDate();
-      var months = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-      ];
-      var week = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ];
-      var ids = ["dayname", "month", "daynum"];
-      var values = [week[dname], months[mo], dnum];
-      for (var i = 0; i < ids.length; i++)
-        document.getElementById(ids[i]).firstChild.nodeValue = values[i];
-    }
-  </script>
-
-  <div class="container">
-    <p>HATDOG</p>
-  </div>
-</body>
+<div class="datetime">
+  <div class="date"></div>
+  <div class="time"></div>
+</div>
+<!-- script for date & time dashboard -->
+<script src="{{url_for('static', filename='js/time_date.js') }}" defer></script>
 {% endblock content %}
