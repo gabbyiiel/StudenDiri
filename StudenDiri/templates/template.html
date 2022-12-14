@@ -36,9 +36,6 @@
 
   <body>
     {% include 'navbar.html' %} {% block content %} {% endblock %}
-
-
-    </script>
     <!-- Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -59,29 +56,6 @@
     ></script>
     <!--Swiper-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        breakpoints: {
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 15,
-          },
-          810: {
-            slidesPerView: 3,
-            spaceBetween: 15,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 10,
-          },
-        },
-      });
-    </script>
+    <script src="../static/js/swiper.js" defer></script>
   </body>
 </html>
