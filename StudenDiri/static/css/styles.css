@@ -20,17 +20,9 @@
   font-style: normal;
   font-display: swap;
   color: white;
-  font-weight: B;
   justify-content: center;
   align-items: center;
   align-content: center;
-}
-.whitelogo {
-  width: auto;
-  height: 24px;
-}
-.container-fluid {
-  background-color: #7a0012;
 }
 
 h1 {
@@ -47,118 +39,4 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-.divider {
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-
-/* To show the lines on right 
-and left sides of the text */
-.divider::after,
-.divider::before {
-  content: "";
-  border: 0.5px solid rgb(255, 255, 255);
-  flex: 1;
-}
-
-/* Space on left and right sides of text */
-.divider:not(:empty)::before {
-  margin-right: 15px;
-  margin-left: 330px;
-}
-
-.divider:not(:empty)::after {
-  margin-left: 15px;
-  margin-right: 330px;
-}
-
-/* OUR TEAM CARDS */
-.swiper {
-  max-width: 75%;
-}
-.swiper-slide {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-}
-.content {
-  width: 326%;
-}
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-}
-
-.border {
-  height: 100%;
-  width: 100%;
-  background: transparent;
-  border-radius: 10px;
-  transition: border 1s;
-  position: absolute;
-}
-.border:hover {
-  border: 2px solid #fff;
-}
-.card {
-  height: 345px;
-  width: 150px;
-  background: #808080;
-  border-radius: 10px;
-  transition: background 0.8s;
-  overflow: hidden;
-  background: #000;
-  box-shadow: 0 70px 63px -60px #000;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.card_img {
-  display: block;
-  width: 100%;
-}
-
-.card_overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  background: rgb(0, 0, 0, 0.5) url(../img/portraits/Dimpol.jpeg) center center
-    no-repeat;
-  background-size: 385px;
-  background-blend-mode: multiply;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-}
-.card_overlay:hover {
-  opacity: 1;
-  transition: 1s;
-}
-
-.card_title {
-  font-size: 1.2em;
-}
-
-.card_description {
-  font-size: 0.8em;
-  margin-top: 0.25em;
 }

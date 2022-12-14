@@ -8,27 +8,31 @@ from .models import UserRepo
 
 @auth.route('/')
 def lp_index():
-    return render_template("landingpage/index.html")
+    return render_template("landingpage/base.html")
 
 @auth.route('/dashboard')
 def dashboard():
     if "username" in session:
         username = session["username"]
-        return render_template("users/index.html")
+        title = 'Dashboard'
+        return render_template("users/base.html", title=title)
     else:
         return redirect('/login')
-    return render_template("landingpage/index.html")
+
 
 @auth.route('/about')
 def ap_index():
-    return render_template("aboutpage/index.html")
+    title = 'About'
+    return render_template("aboutpage/base.html", title=title)
 
 @auth.route('/services')
 def sp_index():
-    return render_template("servicespage/index.html")
+    title = 'Services'
+    return render_template("servicespage/base.html", title=title)
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
+    title = 'Login'
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
         username = request.form.get('inputUsername')
         password = request.form.get('inputPassword')
@@ -40,7 +44,7 @@ def login():
             return redirect('/dashboard')
         else:
             return "<p> wrong? </p>"
-    return render_template("auth/loginpage.html", boolean=True)
+    return render_template("auth/loginpage.html", boolean=True, title=title)
 
 @auth.route('/logout')
 
@@ -53,6 +57,7 @@ def logout():
 
 @auth.route('/signup', methods=['GET', 'POST'])
 def sign_up():
+    title = 'Sign Up'
     if request.method == 'POST':
         firstname = request.form.get('inputFirstname')
         lastname = request.form.get('inputLastname')
@@ -73,6 +78,6 @@ def sign_up():
             flash('Account Created', category='success')
             return redirect('login')
 
-    return render_template("auth/signup-page.html")
+    return render_template("auth/signup-page.html", title=title)
 
 
