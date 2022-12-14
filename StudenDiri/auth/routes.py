@@ -12,7 +12,12 @@ def lp_index():
 
 @auth.route('/dashboard')
 def dashboard():
-    return render_template("users/index.html")
+    if "username" in session:
+        username = session["username"]
+        return render_template("users/index.html")
+    else:
+        return redirect('/login')
+    return render_template("landingpage/index.html")
 
 @auth.route('/about')
 def ap_index():
