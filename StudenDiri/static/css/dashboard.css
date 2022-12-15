@@ -1,0 +1,14 @@
+.datetime {
+  padding: 30px;
+}
+.date {
+  font-size: 2rem;
+}
+.time {
+  font-size: 1.2rem;
+}
+
+.announcement {
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.137);
+}

@@ -4,7 +4,6 @@
 />
 {% if session['loggedin'] %}
 <!-- LOGGED IN NAVBAR -->
-<script src="{{url_for('static', filename='js/dropdown.js') }}" defer></script>
 <div class="container-fluid">
   <header class="d-flex flex-wrap justify-content-center pt-2 pb-2">
     <a href="/dashboard" class="d-flex align-items-center me-md-auto">
@@ -24,42 +23,10 @@
       <li class="nav-item">
         <a href="/logout" class="nav-link link-light">Logout</a>
       </li>
-    </ul>
-    <div class="nav_right">
-			<ul>
-				<li class="nr_li dd_main">
-					<i class="fa-solid fa-user-nurse"></i>
-					<div class="dd_menu">
-						<div class="dd_left">
-							<ul>
-								<li><i class="fas fa-map-marker-alt"></i></li>
-								<li><i class="far fa-star"></i></li>
-								<li><i class="far fa-plus-square"></i></li>
-								<li><i class="fas fa-cog"></i></li>
-								<li><i class="fas fa-download"></i></li>
-								<li><i class="fas fa-sign-out-alt"></i></li>
-							</ul>
-						</div>
-						<div class="dd_right">
-							<ul>
-								<li>Location</li>
-								<li>Favorites</li>
-								<li>Addpeople</li>
-								<li>Settings</li>
-								<li>Downloads</li>
-								<li>Logout</li>
-							</ul>
-						</div>
-					</div>
-				</li>
-				<li class="nr_li">
-					<i class="fas fa-envelope-open-text"></i>
-				</li>
-			</ul>
+
   </header>
 </div>
-
-
+<script src="{{url_for('static', filename='js/dropdown.js') }}" defer></script>
 
 {% else %}
 <!-- NO USER LOGGED IN NAV BAR -->

@@ -1,5 +1,3 @@
-var dd_main = document.querySelector(".dd_main");
-
-	dd_main.addEventListener("click", function(){
-		this.classList.toggle("active");
-	})
+function menuToggle() {
+    const toggleMenu = document.querySelector(".menu");
+    toggleMenu.classList.toggle("active");
