@@ -19,8 +19,11 @@ def create_app(test_app=None):
     )
     # import blueprints
     from .auth import auth
+    from .Services.Printing import printing
+    from .Services.Gcash import gcash
     
     # register blueprints   
     app.register_blueprint(auth)
-    
+    app.register_blueprint(printing)
+    app.register_blueprint(gcash)
     return app

@@ -19,6 +19,15 @@ def dashboard():
     else:
         return redirect('/login')
 
+@auth.route('/userprofile')
+def userprofile():
+    if "username" in session:
+        username = session["username"]
+        title = 'Profile'
+        return render_template("users/userprofile.html", title=title)
+    else:
+        return redirect('/login')
+
 
 @auth.route('/about')
 def ap_index():
@@ -47,7 +56,6 @@ def login():
     return render_template("auth/loginpage.html", boolean=True, title=title)
 
 @auth.route('/logout')
-
 def logout():
     session.pop('loggedin', None)
     session.pop('id', None)
@@ -68,13 +76,12 @@ def sign_up():
         password = request.form.get('inputPassword')
         gender = request.form.get('Gender')
         username = request.form.get('inputUsername')
-        print(firstname,lastname,gender)
         #function for verification
         if len(password) < 8:
             flash('Password must be at least 8 characters', category='error')
             return redirect('signup')
         else:
-            signup = UserRepo.signup(username,idnumber, firstname, lastname, email, course, college, password, gender,)
+            signup = UserRepo.signup(username,idnumber, firstname, lastname, email, course, college, password, gender)
             flash('Account Created', category='success')
             return redirect('login')
 
